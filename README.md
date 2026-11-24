@@ -6,6 +6,9 @@
 
 <p align="center">Find and clean up duplicate movies, episodes, and subtitle files in Plex.</p>
 
+
+> **Moved:** this project now lives at [github.com/Network-28](https://github.com/Network-28) and its image is `ghcr.io/network-28/deduplarr`. The old `ghcr.io/thedinz/deduplarr` image no longer gets updates. If you run it, change your container's image (on Unraid: Edit the container, then Repository) to `ghcr.io/network-28/deduplarr:latest` and apply. Your settings and data stay as they are.
+
 ## What is Deduplarr?
 
 Over time a Plex library collects extra copies: a 720p file that was never removed after a 4K upgrade, two encodes of the same episode, or three English `.srt` files next to one movie. Plex shows these as multiple versions, but it gives you no quick way to compare them or decide which to keep.
