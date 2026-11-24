@@ -58,7 +58,7 @@ Create a `docker-compose.yml`:
 ```yaml
 services:
   deduplarr:
-    image: ghcr.io/thedinz/deduplarr:latest
+    image: ghcr.io/network-28/deduplarr:latest
     container_name: deduplarr
     ports:
       - "7889:7889"
@@ -80,7 +80,7 @@ docker compose up -d
 ### Docker CLI
 
 ```bash
-docker run -d --name deduplarr -p 7889:7889 -e TZ=America/New_York -e PUID=1000 -e PGID=1000 -v ./config:/config --restart unless-stopped ghcr.io/thedinz/deduplarr:latest
+docker run -d --name deduplarr -p 7889:7889 -e TZ=America/New_York -e PUID=1000 -e PGID=1000 -v ./config:/config --restart unless-stopped ghcr.io/network-28/deduplarr:latest
 ```
 
 ### Unraid
@@ -89,7 +89,7 @@ Add a container with these settings:
 
 | Setting | Value |
 | --- | --- |
-| Repository | `ghcr.io/thedinz/deduplarr:latest` |
+| Repository | `ghcr.io/network-28/deduplarr:latest` |
 | Port | `7889` → `7889` |
 | Path | `/mnt/user/appdata/deduplarr` → `/config` |
 | Variables | `TZ` = your time zone, `PUID` = `99`, `PGID` = `100` |
@@ -188,9 +188,9 @@ pnpm lint
 
 | Tag | Built from |
 | --- | --- |
-| `ghcr.io/thedinz/deduplarr:latest` | `main` branch |
-| `ghcr.io/thedinz/deduplarr:dev` | `dev` branch |
-| `ghcr.io/thedinz/deduplarr:X.Y.Z` | version tags (`vX.Y.Z`) |
+| `ghcr.io/network-28/deduplarr:latest` | `main` branch |
+| `ghcr.io/network-28/deduplarr:dev` | `dev` branch |
+| `ghcr.io/network-28/deduplarr:X.Y.Z` | version tags (`vX.Y.Z`) |
 
 GitHub Releases are created automatically from `v*` tags.
 
