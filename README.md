@@ -6,6 +6,9 @@
 
 <p align="center">Find and clean up duplicate movies, episodes, and subtitle files in Plex.</p>
 
+
+> **Moved:** this project now lives at [github.com/Network-28](https://github.com/Network-28) and its image is `ghcr.io/network-28/deduplarr`. The old `ghcr.io/thedinz/deduplarr` image no longer gets updates. If you run it, change your container's image (on Unraid: Edit the container, then Repository) to `ghcr.io/network-28/deduplarr:latest` and apply. Your settings and data stay as they are.
+
 ## What is Deduplarr?
 
 Over time a Plex library collects extra copies: a 720p file that was never removed after a 4K upgrade, two encodes of the same episode, or three English `.srt` files next to one movie. Plex shows these as multiple versions, but it gives you no quick way to compare them or decide which to keep.
@@ -58,7 +61,7 @@ Create a `docker-compose.yml`:
 ```yaml
 services:
   deduplarr:
-    image: ghcr.io/thedinz/deduplarr:latest
+    image: ghcr.io/network-28/deduplarr:latest
     container_name: deduplarr
     ports:
       - "7889:7889"
@@ -80,7 +83,7 @@ docker compose up -d
 ### Docker CLI
 
 ```bash
-docker run -d --name deduplarr -p 7889:7889 -e TZ=America/New_York -e PUID=1000 -e PGID=1000 -v ./config:/config --restart unless-stopped ghcr.io/thedinz/deduplarr:latest
+docker run -d --name deduplarr -p 7889:7889 -e TZ=America/New_York -e PUID=1000 -e PGID=1000 -v ./config:/config --restart unless-stopped ghcr.io/network-28/deduplarr:latest
 ```
 
 ### Unraid
@@ -89,7 +92,7 @@ Add a container with these settings:
 
 | Setting | Value |
 | --- | --- |
-| Repository | `ghcr.io/thedinz/deduplarr:latest` |
+| Repository | `ghcr.io/network-28/deduplarr:latest` |
 | Port | `7889` → `7889` |
 | Path | `/mnt/user/appdata/deduplarr` → `/config` |
 | Variables | `TZ` = your time zone, `PUID` = `99`, `PGID` = `100` |
@@ -188,9 +191,9 @@ pnpm lint
 
 | Tag | Built from |
 | --- | --- |
-| `ghcr.io/thedinz/deduplarr:latest` | `main` branch |
-| `ghcr.io/thedinz/deduplarr:dev` | `dev` branch |
-| `ghcr.io/thedinz/deduplarr:X.Y.Z` | version tags (`vX.Y.Z`) |
+| `ghcr.io/network-28/deduplarr:latest` | `main` branch |
+| `ghcr.io/network-28/deduplarr:dev` | `dev` branch |
+| `ghcr.io/network-28/deduplarr:X.Y.Z` | version tags (`vX.Y.Z`) |
 
 GitHub Releases are created automatically from `v*` tags.
 
